@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#eeeae0">
+
+    <title>Four Colour Bead Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="game">
+
+        <!-- Game Header -->
+        <section class="game-header">
+            <h1>Four Colour Bead Game</h1>
+
+            <div class="game-stats">
+                <div class="stat-box">
+                    <span class="label">TIME</span>
+                    <span class="value" id="timer">00:00</span>
+                </div>
+
+                <div class="stat-box">
+                    <span class="label">MOVES</span>
+                    <span class="value" id="moves">0</span>
+                </div>
+            </div>
+            <button id="reset-button" class="reset-button">
+                Reset Game
+            </button>
+            <button id="change-cards-button" class="change-cards-button">
+                 Change Cards
+            </button>
+        </section>
+
+        <!-- Target Card -->
+        <section class="target-card">
+            <div class="target-board" id="target-board">
+            </div>
+        </section>
+
+        <!-- Main Game Board -->
+        <section class="wooden-board">
+
+            <!-- Four metallic nails -->
+            <div class="nail nail-top-left"></div>
+            <div class="nail nail-top-right"></div>
+            <div class="nail nail-bottom-left"></div>
+            <div class="nail nail-bottom-right"></div>
+
+            <div class="columns" id="game-board">
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
