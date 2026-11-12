@@ -23,6 +23,7 @@ body {
 }
 
 /* GAME HEADER */
+
 .game-header {
     text-align: center;
     margin-bottom: 6px;
@@ -66,6 +67,7 @@ body {
 }
 
 /* BUTTONS */
+
 .reset-button,
 .change-cards-button {
     margin-top: 8px;
@@ -96,6 +98,7 @@ body {
 }
 
 /* TARGET CARD */
+
 .target-card {
     width: 45%;
     margin: 0 auto 8px;
@@ -120,6 +123,7 @@ body {
 }
 
 /* TARGET CARD BEADS */
+
 .target-card .bead {
     width: 24px;
     height: 24px;
@@ -127,6 +131,7 @@ body {
 }
 
 /* MAIN WOODEN BOARD */
+
 .wooden-board {
     position: relative;
     width: 100%;
@@ -139,34 +144,39 @@ body {
 }
 
 /* HORIZONTAL CONNECTING TRACK */
+
 .wooden-board::before {
     content: "";
     position: absolute;
     top: 15px;
-    left: 75px;
+    left: 74px;
     right: 75px;
-    height: 4px;
+    height: 8px;
     background: #8e7b68;
     border-top: 2px solid #766451;
     border-bottom: 2px solid #766451;
-    z-index: 2;
+    z-index: 1;
 }
 
 /* FOUR COLUMNS */
+
 .columns {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
     height: 290px;
+    position: relative;
+    z-index: 0;
 }
 
 /* INDIVIDUAL COLUMNS */
+
 .column {
     position: relative;
     background: transparent;
     border: none;
     border-radius: 0;
-    padding: 0 7px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -174,7 +184,8 @@ body {
     overflow: hidden;
 }
 
-/* VERTICAL GUIDES */
+/* VERTICAL TRACKS */
+
 .column::before {
     content: "";
     position: absolute;
@@ -189,13 +200,14 @@ body {
     z-index: 0;
 }
 
-/* SIX BEAD POSITIONS */
+/* BEAD POSITIONS */
+
 .slot {
     position: relative;
-    z-index: 1;
-    flex: 0 0 34px;
+    z-index: 2;
+    flex: 0 0 48px;
+    width: 100%;
     height: 34px;
-    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,8 +216,14 @@ body {
 }
 
 /* MAIN BEADS */
+
 .bead {
-    aspect-ratio: 1;
+    display: block;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+    aspect-ratio: 1 / 1;
     flex-shrink: 0;
     border-radius: 50%;
     cursor: grab;
@@ -215,8 +233,8 @@ body {
 }
 
 .column .bead {
-    width: 85%;
-    height: 85%;
+    width: 58px;
+    height: 58px;
     max-width: 100%;
     max-height: 100%;
 }
@@ -226,6 +244,7 @@ body {
 }
 
 /* BEAD COLOURS */
+
 .turquoise {
     background: #36b9b8;
 }
@@ -243,6 +262,7 @@ body {
 }
 
 /* WOODEN BOARD NAILS */
+
 .wooden-board .nail {
     position: absolute;
     width: 13px;
@@ -281,6 +301,7 @@ body {
 }
 
 /* MOBILE SCREENS */
+
 @media (max-width: 500px) {
 
     body {
@@ -324,6 +345,7 @@ body {
     }
 
     /* TARGET CARD ON PHONE */
+
     .target-card {
         width: 55%;
         margin-bottom: 8px;
@@ -343,6 +365,7 @@ body {
     }
 
     /* MAIN BOARD ON PHONE */
+
     .wooden-board {
         width: 100%;
         min-height: 0;
@@ -351,8 +374,8 @@ body {
     }
 
     .wooden-board::before {
-        left: 10px;
-        right: 10px;
+        left: 7px;
+        right: 7px;
     }
 
     .columns {
@@ -361,6 +384,11 @@ body {
     }
 
     .column {
-        padding: 0 3px;
+        padding: 0;
+    }
+
+    .column .bead {
+        width: 34px;
+        height: 34px;
     }
 }
